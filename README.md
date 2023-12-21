@@ -19,18 +19,18 @@ What this library currently supports:
 What it doesn't support:
  - multiple instances.
 
-This lack is multiple instances is obviously a huge limitation, but it's something [I am inhereiting from an underlying library](https://github.com/alisomay/libpd-rs/issues/20). 
-Now `libpd` has had supoort for this for about 5 years, so maybe I should just buckle down and not use a wrapper library... more to come on that maybe.
+This lack is multiple instances is obviously a huge limitation, but it's something [I am inheriting from an underlying library](https://github.com/alisomay/libpd-rs/issues/20). 
+Now `libpd` has had support for this for about 5 years, so maybe I should just buckle down and not use a wrapper library... more to come on that maybe.
 
 ## How To Use:
-This plugin works by dumping an audio buffer into a `GenerativePlayback` resource in Godot. The current setup is to instance a `GPD` node and then child the audio player you want to use under it. 
+This plug-in works by dumping an audio buffer into a `GenerativePlayback` resource in Godot. The current setup is to instance a `GPD` node and then child the audio player you want to use under it. 
 Select `Generator` for the stream in the audio player. Specify the node path to the audio player, the path (relative to the project root) for `GPD` to find your patches, and the name of the entry 
 ("main") patch. After all of that is done, just have some GD script call `play()` on the `GPD` node and listened to those sweet generative patches play out.
 
 
 ## Roadmap/Contributions:
-I am sort of toying around with this in as part of a larger game/toolset. Therefore its direction will be first and foremost guided by what _I_ need it to do. The code isn't clean, there 
-are many ergonomic issues, etc. But it currently works for my usecase. 
+I am sort of toying around with this in as part of a larger game/tool-set. Therefore its direction will be first and foremost guided by what _I_ need it to do. The code isn't clean, there 
+are many ergonomic issues, etc. But it currently works for my use-case. 
 
 If you have improvements, please feel free to chime in, but if you need it to do something other than what it currently does, forking it might be the most efficient option. 
 Hopefully someone who actually knows what they are doing will be inspired to make a better version of this tool. 
