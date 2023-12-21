@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1aim6xnnoanv"]
+
+[ext_resource type="Script" path="res://addons/gpd/demo/test.gd" id="1_dex3m"]
+[ext_resource type="AudioStream" uid="uid://ddb15xl4be4qc" path="res://addons/gpd/demo/patches/footsteps.mp3" id="2_mp1bs"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_0ejqj"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_dex3m")
+
+[node name="mover" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56261, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.654374)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="GPD" type="GPD" parent="."]
+player_node_path = "AudioStreamPlayer"
+patch_search_root = "./addons/gpd/demo/patches/"
+entry_patch = "test2.pd"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="GPD"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.39393, 0, 0.571272)
+stream = SubResource("AudioStreamGenerator_0ejqj")
+volume_db = 23.619
+autoplay = true
+max_distance = 5.0
+
+[node name="GPD2" type="GPD" parent="."]
+player_node_path = "AudioStreamPlayer"
+patch_search_root = "./addons/gpd/demo/patches/"
+entry_patch = "test.pd"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="GPD2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23794, 0, 0.571272)
+stream = SubResource("AudioStreamGenerator_0ejqj")
+volume_db = 23.619
+autoplay = true
+max_distance = 5.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0884, 0, 0)
+visible = false
+stream = ExtResource("2_mp1bs")
+max_distance = 5.0

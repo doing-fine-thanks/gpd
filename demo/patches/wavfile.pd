@@ -1,0 +1,16 @@
+#N canvas 1 53 450 300 10;
+#X obj 87 71 openpanel;
+#X obj 87 52 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 87 91 open \$1;
+#X obj 87 129 readsf~ 2;
+#X obj 88 161 dac~;
+#X text 131 48 click here to open wav file;
+#X text 204 98 click here once file is open;
+#X msg 189 75 start;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 7 0 3 0;
